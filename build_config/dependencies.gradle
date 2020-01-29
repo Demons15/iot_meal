@@ -5,7 +5,7 @@
 ext {
     androidConfig = [
             androidBuildToolsVersion : "28.0.3",
-            androidMinSdkVersion     : 26,
+            androidMinSdkVersion     : 19,
             androidTargetSdkVersion  : 28,
             androidCompileSdkVersion : 28,
             testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner",
