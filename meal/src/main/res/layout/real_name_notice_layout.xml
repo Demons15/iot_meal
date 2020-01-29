@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="342dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="207dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/real_name_shape"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="当前卡未实名认证！"
+                    android:textColor="@color/color_333333"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="16dp"
+                    android:text="尊敬的用户：您的SIM卡暂未实名认证，根据国家工信部要求：在用户办理入网手续时，必须采用十八周岁以上二代身份进行实名认证。"
+                    android:textColor="#4D4D4D"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/right_now_real_name"
+                    android:layout_width="227dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/real_name_button_shape"
+                    android:gravity="center"
+                    android:text="立即认证"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="142dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/real_name_pop_icon" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:src="@mipmap/close_window"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

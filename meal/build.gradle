@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+//android配置
+def androidConfig = rootProject.ext.androidConfig
+//发布apk版本配置
+def versionConfig = rootProject.extensions.ext
+//相关依赖库
+def frameworkDependencies = rootProject.ext.frameworkDependencies
+android {
+    compileSdkVersion androidConfig.androidCompileSdkVersion
+    buildToolsVersion androidConfig.androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion androidConfig.androidMinSdkVersion
+        targetSdkVersion androidConfig.androidTargetSdkVersion
+        testInstrumentationRunner androidConfig.testInstrumentationRunner
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'true'
+            buildConfigField 'String', 'SERVER_URL', '"http://testapp.ai-boss.net/app/"'
+//            buildConfigField 'String', 'SERVER_URL', '"http://app.ai-boss.net/app/"'
+//            buildConfigField 'String', 'MEAL_INFO_URL', '"http://testiapi.cwucloud.com/api/v2/"'
+            buildConfigField 'String', 'MEAL_INFO_URL', '"http://iapi.ai-boss.net/api/v2/"'
+            buildConfigField 'String', 'LOCATION_SEARCH_URL', '"http://restapi.amap.com/v3/"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'false'
+            buildConfigField 'String', 'SERVER_URL', '"http://app.ai-boss.net/app/"'
+            buildConfigField 'String', 'WECHAT_URL', '"https://api.weixin.qq.com/sns/"'
+            buildConfigField 'String', 'MEAL_INFO_URL', '"http://iapi.ai-boss.net/api/v2/"'
+            buildConfigField 'String', 'LOCATION_SEARCH_URL', '"http://restapi.amap.com/v3/"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api frameworkDependencies.dagger
+    annotationProcessor frameworkDependencies.butterKnifeCompiler
+    api frameworkDependencies.butterKnife
+    annotationProcessor frameworkDependencies.daggerCompiler
+    api frameworkDependencies.javaxAnnotation
+    api frameworkDependencies.retrofit
+    api frameworkDependencies.retrofitConverterGson
+    api frameworkDependencies.retrofitAdapterRxjava
+    api frameworkDependencies.okHttp
+    api frameworkDependencies.rxAndroid
+    api frameworkDependencies.rxJava
+    api frameworkDependencies.logger
+    api frameworkDependencies.eventbus
+    api frameworkDependencies.greenDao
+    api frameworkDependencies.javaxAnnotation
+    api frameworkDependencies.glide
+    api frameworkDependencies.systembartint
+    api frameworkDependencies.gson
+    api frameworkDependencies.supportV4
+    api frameworkDependencies.supportV7
+    api frameworkDependencies.wechat
+    api frameworkDependencies.zloading
+    api frameworkDependencies.fastjson
+    api frameworkDependencies.recyclerView
+    api frameworkDependencies.cardview
+    api frameworkDependencies.zbar
+    api frameworkDependencies.zxing
+    api frameworkDependencies.picasso
+    api frameworkDependencies.banner
+    api frameworkDependencies.BasePopup
+    api frameworkDependencies.crashreport
+    api frameworkDependencies.nativecrashreport
+    api frameworkDependencies.circleimageview
+    api frameworkDependencies.PickerView
+    api frameworkDependencies.design
+    api frameworkDependencies.flowlayout
+    api frameworkDependencies.MagicIndicator
+    api frameworkDependencies.SeekBarView
+    api frameworkDependencies.TopNoticeView
+    api frameworkDependencies.okhttp3Logging
+    api frameworkDependencies.loadingStyle
+    api frameworkDependencies.xrecyclerview
+    api frameworkDependencies.agentweb
+    api frameworkDependencies.filechooser
+    api frameworkDependencies.download
+    api frameworkDependencies.DateWeekPicker
+    api frameworkDependencies.zycardview
+    api frameworkDependencies.lightStatusBar
+    api frameworkDependencies.autoSize
+}

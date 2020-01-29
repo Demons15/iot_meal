@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'build_config/dependencies.gradle'
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.novoda:bintray-release:0.5.0'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        // 私有仓库地址
+        maven {
+            url "http://lib.gcssloop.com/repository/gcssloop-central/"
+        }
+        maven {
+            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
+    }
+    ext {
+        androidApplicationId = 'com.cxsz.iot_meal'
+        androidVersionCode = 4
+        androidVersionName = "1.0"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

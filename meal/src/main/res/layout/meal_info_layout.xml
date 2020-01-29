@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="MissingDefaultResource">
+
+    <common.widget.TopSuspensionNestedScrollView
+        android:id="@+id/top_suspension_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/meal_state_info_layout" />
+
+            <include layout="@layout/current_meal_info_layout" />
+
+            <LinearLayout
+                android:id="@+id/no_user_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_use"
+                        android:textColor="@color/color_333333"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/no_use_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:minHeight="112dp"
+                        android:nestedScrollingEnabled="false" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_check_group_area"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/tab_check_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <RadioButton
+                        android:id="@+id/package_purchase_tab"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableBottom="@drawable/bottom_index_selector"
+                        android:gravity="center"
+                        android:text="@string/package_purchase"
+                        android:textColor="@drawable/radio_color"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/flow_overlay_pack_tab"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="24dp"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableBottom="@drawable/bottom_index_selector"
+                        android:gravity="center"
+                        android:text="@string/flow_overlay_packet"
+                        android:textColor="@drawable/radio_color"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/voice_overlay_packet_tab"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="24dp"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableBottom="@drawable/bottom_index_selector"
+                        android:gravity="center"
+                        android:text="@string/voice_overlay_packet"
+                        android:textColor="@drawable/radio_color"
+                        android:textSize="14sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#0D000000" />
+
+            <FrameLayout
+                android:id="@+id/business_management_area"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </common.widget.TopSuspensionNestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/top_suspension_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical" />
+</RelativeLayout>
